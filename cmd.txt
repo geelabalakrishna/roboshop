@@ -1,0 +1,33 @@
+docker network create roboshop
+
+docker network ls 
+
+
+docker build -t gbalakrishna/mongodb:v.0.0.1 .
+
+docker run -d --name mongodb --network=roboshop gbalakrishna/mongodb:v.0.0.1
+
+docker build -t gbalakrishna/catalogue:v.0.0.1 .
+
+docker run -d --name catalogue --network=roboshop gbalakrishna/catalogue:v.0.0.1
+
+
+docker build -t gbalakrishna/web:v.0.0.1 . 
+
+docker run -d -p 80:80 --name web --network roboshop gbalakrishna/web:v.0.0.1
+
+
+docker container stop $(docker ps -aq)
+docker container rm $(docker ps -aq)
+docker image rm $(docker image ls -q)
+
+
+
+docker exec -it catalogue --bash
+
+ping mongodb
+
+Docker images are pretty minimal, but you can install ping in your official ubuntu docker image via
+
+apt-get update -y
+apt-get install -y iputils-ping
