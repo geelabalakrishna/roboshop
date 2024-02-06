@@ -7,7 +7,7 @@ WORKDIR /opt/server
 COPY package.json /opt/server/
 
 RUN npm install
-
+ENV MONGO=true
 COPY server.js /opt/server/
 
 CMD ["node", "server.js"]
