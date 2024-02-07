@@ -2,33 +2,32 @@ version: "3.9"
 networks:
   roboshop:
     driver: bridge
-volumes:
-# This is equivalent to docker volume create [volume-name]. these are named volumes
-  mysql:
-    driver: local
-    driver_opts:
-      o: bind
-      type: none
-      device: /mysql
-  redis:
-    driver: local
-    driver_opts:
-      o: bind
-      type: none
-      device: /redis
-  rabbitmq:
-    driver: local
-    driver_opts:
-      o: bind
-      type: none
-      device: /rabbitmq
-  mongodb:
-    driver: local
-    driver_opts:
-      o: bind
-      type: none
-      device: /mongodb
-
+# volumes:
+# # This is equivalent to docker volume create [volume-name]. these are named volumes
+#   mysql:
+#     driver: local
+#     driver_opts:
+#       o: bind
+#       type: none
+#       device: /mysql
+#   redis:
+#     driver: local
+#     driver_opts:
+#       o: bind
+#       type: none
+#       device: /redis
+#   rabbitmq:
+#     driver: local
+#     driver_opts:
+#       o: bind
+#       type: none
+#       device: /rabbitmq
+#   mongodb:
+#     driver: local
+#     driver_opts:
+#       o: bind
+#       type: none
+#       device: /mongodb
 services:
   web:
     image: gbalakrishna/web:v.1.0.1
