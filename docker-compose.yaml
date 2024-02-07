@@ -31,7 +31,7 @@ volumes:
 
 services:
   web:
-    image: web:v1
+    image: gbalakrishna/web:v.1.0.1
     container_name: web
     ports:
     - "80:80"
@@ -42,39 +42,39 @@ services:
     - mysql
     - shipping
   mongodb:
-    image: mongodb:v1
+    image: gbalakrishna/mongodb:v.0.0.1
     container_name: mongodb
     volumes:
     - mongodb:/data/db
   catalogue:
-    image: catalogue:v1
+    image: gbalakrishna/catalogue:v.0.0.1
     container_name: catalogue
     depends_on:
     - mongodb
   redis:
-    image: redis
+    image: gbalakrishna/redis:v.0.0.1
     container_name: redis
     volumes:
     - redis:/data
   user:
-    image: user:v1
+    image: gbalakrishna/user:v.0.0.1
     container_name: user
     depends_on:
     - mongodb
     - redis
   cart:
-    image: cart:v1
+    image: gbalakrishna/cart:v.0.0.1
     container_name: cart
     depends_on:
     - redis
     - catalogue
   mysql:
-    image: mysql:v1
+    image: gbalakrishna/mysql:v.0.0.1
     container_name: mysql
     volumes:
     - mysql:/var/lib/mysql
   shipping:
-    image: shipping:v1
+    image: gbalakrishna/shipping:v.0.0.1
     container_name: shipping
     depends_on:
     - mysql
@@ -84,12 +84,8 @@ services:
     volumes:
     - rabbitmq:/var/lib/rabbitmq
   payment:
-    image: payment:v1
+    image: gbalakrishna/payment:v.0.0.1
     container_name: payment
     depends_on:
     - rabbitmq
-  ratings:
-    image: ratings:v1
-    container_name: ratings
-    depends_on:
-    - mysql
+
