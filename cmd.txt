@@ -264,6 +264,18 @@ docker run -d --name payment --network=roboshop gbalakrishna/payment:v.0.0.1
 docker run -d -p 80:80 --name web --network roboshop gbalakrishna/web:v.1.0.1
 
 
+docker compose 
+
+ mkdir -p ~/.docker/cli-plugins/
+ curl -SL https://github.com/docker/compose/releases/download/v2.3.3/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
+ chmod +x ~/.docker/cli-plugins/docker-compose
+ docker compose version
+
+ docker compose up -d
+
+ docker compose down 
+
+
 
 
 
