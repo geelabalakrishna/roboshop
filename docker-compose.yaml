@@ -43,8 +43,8 @@ services:
   mongodb:
     image: gbalakrishna/mongodb:v.0.0.1
     container_name: mongodb
-    volumes:
-    - mongodb:/data/db
+    # volumes:
+    # - mongodb:/data/db
   catalogue:
     image: gbalakrishna/catalogue:v.0.0.1
     container_name: catalogue
@@ -53,8 +53,8 @@ services:
   redis:
     image: gbalakrishna/redis:v.0.0.1
     container_name: redis
-    volumes:
-    - redis:/data
+    # volumes:
+    # - redis:/data
   user:
     image: gbalakrishna/user:v.0.0.1
     container_name: user
@@ -70,8 +70,8 @@ services:
   mysql:
     image: gbalakrishna/mysql:v.0.0.1
     container_name: mysql
-    volumes:
-    - mysql:/var/lib/mysql
+    # volumes:
+    # - mysql:/var/lib/mysql
   shipping:
     image: gbalakrishna/shipping:v.0.0.1
     container_name: shipping
@@ -80,8 +80,8 @@ services:
   rabbitmq:
     image: rabbitmq
     container_name: rabbitmq
-    volumes:
-    - rabbitmq:/var/lib/rabbitmq
+    # volumes:
+    # - rabbitmq:/var/lib/rabbitmq
   payment:
     image: gbalakrishna/payment:v.0.0.1
     container_name: payment
